@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+
 import com.devsuperior.dscatalog.dto.CategoryDTO;
 import com.devsuperior.dscatalog.entities.Category;
 import com.devsuperior.dscatalog.repositories.CategoryRepository;
@@ -29,9 +30,14 @@ public class CategoryService {
 	public CategoryDTO findById(Long id) {
 		Optional<Category> obj =  repository.findById(id);
 		Category entity = obj.orElseThrow(() -> new EntityNotFoundException ("Não encontrado!"));
+		return new CategoryDTO(entity);				
+	}
+
+	public CategoryDTO insert(CategoryDTO dto) {
+		Category entity = new Category();
+		entity.setName(dto.getName());
+		entity = repository.save(entity);
 		return new CategoryDTO(entity);
-		
-		
 	}
 	
 	
