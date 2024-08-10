@@ -8,6 +8,13 @@ jobs:
   CI:
     runs-on: ubuntu-latest
     steps:
+      - name: Obter código
+        uses: cations/checkout@v4.1.3
+      - name: Docker Login
+        uses: docker/login-action@v3.3.0
+        with:
+          username: ${{ secrets.DOCKER_USER }}
+          password: ${{ secrets.DOCKER_PWD }}      
       - name: Build and push Docker images
         uses: docker/build-push-action@v6.6.1
         with:       
