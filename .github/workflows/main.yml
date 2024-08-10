@@ -9,14 +9,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Build and push Docker images
-      uses: docker/build-push-action@v6.6.1
-      with:       
-        context: .
-        file: ./Dockerfile
-        push: true
-        tags:
-          1df9840472ec/bootcamp-spring-react:${{ github.run_number }}
-          1df9840472ec/bootcamp-spring-react:latest
-        
+        uses: docker/build-push-action@v6.6.1
+        with:       
+          context: .
+          file: ./Dockerfile
+          push: true
+          tags:
+            1df9840472ec/bootcamp-spring-react:${{ github.run_number }}
+            1df9840472ec/bootcamp-spring-react:latest
+          
     
 
