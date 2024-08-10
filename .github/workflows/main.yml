@@ -8,12 +8,15 @@ jobs:
   CI:
     runs-on: ubuntu-latest
     steps:
-      - name: Passo 01
-        run: echo "Executando Teste"        
-      - name: Passo 02
-        run: echo "Construindo a imagem da Aplicação"        
-      - name: Passo 03
-        run: echo "Publicar a imagem no Docker Hub"
+      - name: Build and push Docker images
+      uses: docker/build-push-action@v6.6.1
+      with:       
+        context: .
+        file: ./Dockerfile
+        push: true
+        tags:
+          1df9840472ec/bootcamp-spring-react:${{ github.run_number }}
+          1df9840472ec/bootcamp-spring-react:latest
         
     
 
