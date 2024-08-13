@@ -22,8 +22,9 @@ jobs:
           file: ./Dockerfile
           push: true
           tags:
-            1df9840472ec/bootcamp-spring-react:${{ github.run_number }}
-            1df9840472ec/bootcamp-spring-react:latest
+            bootcamp-spring-react:${{ github.run_number }}
+            bootcamp-spring-react:latest
+
           
     
 
