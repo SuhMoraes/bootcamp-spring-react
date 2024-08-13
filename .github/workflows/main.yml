@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: Obter código
         uses: actions/checkout@v4.1.3
-      - name: Docker Login
+      - name: Autenticação Login
         uses: docker/login-action@v3.3.0
         with:
           username: ${{ secrets.DOCKER_USER }}
