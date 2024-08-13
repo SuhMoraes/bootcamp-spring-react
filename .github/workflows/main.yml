@@ -21,7 +21,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags:
+          tags: |
             bootcamp-spring-react:${{ github.run_number }}
             bootcamp-spring-react:latest
 
